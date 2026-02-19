@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PRICEBOT</title>
+
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    df-messenger {
+      --df-messenger-bot-message: #f3f4f6;
+      --df-messenger-button-titlebar-color: #1f2937;
+      --df-messenger-chat-background-color: #ffffff;
+      --df-messenger-font-color: #000000;
+      --df-messenger-send-icon: #1f2937;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1 style="text-align:center; margin-top:50px;">
+  PRICEBOT - Demo Público
+</h1>
+
+<df-messenger
+  intent="WELCOME"
+  chat-title="PRICEBOT"
+  agent-id="1ba68937-0682-439c-9230-2c14468648c8"
+  language-code="es"
+></df-messenger>
+
+</body>
+</html>
