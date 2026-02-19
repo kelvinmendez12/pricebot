@@ -2,22 +2,97 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>PRICEBOT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRICEBOT | Automatización Inteligente</title>
 
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 20px;
+      opacity: 0.8;
+      margin-bottom: 40px;
+    }
+
+    .cta-button {
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      opacity: 0.6;
     }
 
     df-messenger {
       --df-messenger-bot-message: #f3f4f6;
-      --df-messenger-button-titlebar-color: #1f2937;
+      --df-messenger-button-titlebar-color: #6366f1;
       --df-messenger-chat-background-color: #ffffff;
       --df-messenger-font-color: #000000;
-      --df-messenger-send-icon: #1f2937;
+      --df-messenger-send-icon: #6366f1;
       position: fixed;
       bottom: 16px;
       right: 16px;
@@ -27,14 +102,29 @@
 
 <body>
 
-<h1 style="text-align:center; margin-top:50px;">
-  PRICEBOT - Demo Público
-</h1>
+<header>
+  <div class="logo">PRICEBOT</div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Automatiza tus presupuestos con IA</h1>
+    <p>
+      PRICEBOT analiza tus documentos, extrae productos y genera presupuestos 
+      automáticamente en segundos.
+    </p>
+    <a href="#" class="cta-button" onclick="document.querySelector('df-messenger').shadowRoot.querySelector('df-messenger-chat').openChat()">Probar ahora</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 PRICEBOT · Inteligencia Artificial aplicada a Pricing
+</footer>
 
 <df-messenger
   intent="WELCOME"
   chat-title="PRICEBOT"
-  agent-id="1ba68937-0682-439c-9230-2c14468648c8"
+  agent-id="PON_AQUI_TU_AGENT_ID"
   language-code="es"
 ></df-messenger>
 
